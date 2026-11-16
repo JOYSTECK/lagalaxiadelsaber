@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Galaxia del Saber | Bachillerato Tecnológico</title>
+
+<style>
+:root {
+    --azul: #071a36;
+    --azul2: #102d55;
+    --dorado: #d9ae54;
+    --blanco: #ffffff;
+    --gris: #f4f6fa;
+    --texto: #263247;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--azul);
+    color: white;
+    padding: 14px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px #0003;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    color: var(--dorado);
+    font-size: 35px;
+}
+
+.logo h2 {
+    font-size: 19px;
+    line-height: 1.2;
+}
+
+.logo small {
+    color: #d9ae54;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--dorado);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--dorado);
+    color: var(--azul);
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.hero {
+    min-height: 590px;
+    display: flex;
+    align-items: center;
+    padding: 80px 9%;
+    color: white;
+    background:
+        radial-gradient(circle at 80% 20%, #d9ae5433, transparent 22%),
+        radial-gradient(circle at 15% 80%, #3566a855, transparent 25%),
+        linear-gradient(120deg, #06152d, #12345d 65%, #071a36);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "✦     ·       ✧       ·      ✦       ·";
+    position: absolute;
+    top: 12%;
+    right: 5%;
+    font-size: 75px;
+    color: #ffffff30;
+    letter-spacing: 10px;
+    transform: rotate(-15deg);
+}
+
+.hero-content {
+    max-width: 680px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero .tag {
+    color: var(--dorado);
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.08;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--dorado);
+}
+
+.hero p {
+    font-size: 18px;
+    color: #e2e8f0;
+    margin-bottom: 30px;
+}
+
+.section {
+    padding: 75px 9%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.section-title small {
+    color: #b48632;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    color: var(--azul);
+    font-size: 34px;
+    margin-top: 8px;
+}
+
+.section-title p {
+    max-width: 700px;
+    margin: 10px auto;
+    color: #647084;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-box {
+    padding: 30px;
+    background: var(--gris);
+    border-radius: 12px;
+    border-left: 5px solid var(--dorado);
+}
+
+.about-box h3 {
+    color: var(--azul);
+    margin-bottom: 12px;
+}
+
+.values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.value {
+    background: var(--azul);
+    color: white;
+    padding: 9px 14px;
+    border-radius: 25px;
+    font-size: 13px;
+}
+
+.careers {
+    background: var(--gris);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 27px;
+    box-shadow: 0 5px 20px #102d5510;
+    transition: .3s;
+    border-bottom: 4px solid var(--dorado);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px #102d5520;
+}
+
+.card .icon {
+    font-size: 38px;
+    margin-bottom: 13px;
+}
+
+.card h3 {
+    color: var(--azul);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #647084;
+    font-size: 14px;
+}
+
+.cycle {
+    background: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.cycle h2 {
+    font-size: 30px;
+    color: var(--dorado);
+}
+
+.cycle p {
+    margin-top: 8px;
+}
+
+.semesters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.semester {
+    border: 1px solid #d9ae5470;
+    border-radius: 9px;
+    padding: 18px 10px;
+}
+
+.semester strong {
+    color: var(--dorado);
+    font-size: 22px;
+    display: block;
+}
+
+.semester span {
+    font-size: 13px;
+}
+
+.facilities {
+    background: var(--gris);
+}
+
+.facility {
+    padding: 22px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.facility span {
+    font-size: 34px;
+}
+
+.facility h3 {
+    color: var(--azul);
+    margin-top: 8px;
+    font-size: 17px;
+}
+
+.events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.event {
+    padding: 20px;
+    border-left: 4px solid var(--dorado);
+    background: var(--gris);
+    border-radius: 8px;
+}
+
+.event strong {
+    color: #a47725;
+    font-size: 13px;
+}
+
+.event h3 {
+    color: var(--azul);
+    margin: 7px 0;
+    font-size: 17px;
+}
+
+.admissions {
+    background: linear-gradient(120deg, var(--azul), var(--azul2));
+    color: white;
+    text-align: center;
+}
+
+.admissions h2 {
+    color: var(--dorado);
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.fees {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    color: var(--texto);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+}
+
+.fee-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.fee-row:last-child {
+    border-bottom: none;
+}
+
+footer {
+    background: #041126;
+    color: white;
+    padding: 45px 9% 20px;
+    text-align: center;
+}
+
+footer h2 {
+    color: var(--dorado);
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin: 7px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ffffff25;
+    margin-top: 25px;
+    padding-top: 18px;
+    font-size: 12px;
+    color: #aab5c5;
+}
+
+@media(max-width: 850px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 70px 7%;
+    }
+}
+
+@media(max-width: 520px) {
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+
+    .fee-row {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <div class="logo-icon"><img src="logo.png" height="80px"></div>
+        <div>
+            <h2>LA GALAXIA DEL SABER</h2>
+            <small>EDUCACIÓN MEDIA SUPERIOR</small>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#oferta">Oferta educativa</a>
+        <a href="#instalaciones">Instalaciones</a>
+        <a href="#actividades">Actividades</a>
+        <a href="#admisiones">Admisiones</a>
+        <a class="btn" href="SISTEMA.html">Sistema escolar</a>
+    </nav>
+</header>
+
+<!-- INICIO -->
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <div class="tag">DESCUBRE TU POTENCIAL</div>
+
+        <h1>
+            Un universo de
+            <span>conocimientos</span>
+            por descubrir
+        </h1>
+
+        <p>
+            En La Galaxia del Saber creemos que cada estudiante
+            tiene talentos y capacidades únicas. Ofrecemos una
+            educación integral que impulsa el conocimiento,
+            la creatividad y la autonomía.
+        </p>
+
+        <a href="#oferta" class="btn">Conoce nuestra escuela</a>
+        <a href="SISTEMA.html" class="btn"
+           style="background:transparent;color:white;border:1px solid #d9ae54;margin-left:8px">
+           Ingresar al sistema
+        </a>
+    </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="section" id="nosotros">
+    <div class="section-title">
+        <small>CONÓCENOS</small>
+        <h2>¿Quiénes somos?</h2>
+        <p>
+            Una institución de educación media superior que busca
+            formar jóvenes preparados para los retos de su entorno.
+        </p>
+    </div>
+
+    <div class="about">
+        <div class="about-box">
+            <h3>🎯 Nuestra misión</h3>
+            <p>
+                Somos una institución educativa de nivel medio superior,
+                encargada de brindar una educación integral de calidad
+                que permita a los estudiantes desarrollar sus talentos,
+                autonomía y conocimientos mediante experiencias
+                significativas, promoviendo valores como la justicia
+                social, autenticidad, resiliencia, perseverancia y
+                respeto por la naturaleza, para formar jóvenes capaces
+                de enfrentar los retos de su entorno y contribuir
+                positivamente a la sociedad.
+            </p>
+        </div>
+
+        <div class="about-box">
+            <h3>🚀 Nuestra visión</h3>
+            <p>
+                Ser una institución educativa reconocida por formar
+                jóvenes capaces de construir su propio conocimiento,
+                trabajar colaborativamente y enfrentar los retos de
+                su entorno con autonomía, creatividad y resiliencia,
+                fomentando una educación inclusiva, basada en valores,
+                experiencias significativas y respeto por la diversidad
+                y la naturaleza.
+            </p>
+        </div>
+    </div>
+
+    <div style="text-align:center;margin-top:35px">
+        <h3 style="color:#071a36">Nuestros valores</h3>
+        <div class="values" style="justify-content:center">
+            <span class="value">Justicia social</span>
+            <span class="value">Talento</span>
+            <span class="value">Autenticidad</span>
+            <span class="value">Diversidad</span>
+            <span class="value">Resiliencia</span>
+            <span class="value">Autonomía</span>
+            <span class="value">Naturaleza</span>
+            <span class="value">Perseverancia</span>
+            <span class="value">Tiempo</span>
+        </div>
+    </div>
+</section>
+
+<!-- OFERTA EDUCATIVA -->
+<section class="section careers" id="oferta">
+    <div class="section-title">
+        <small>FORMACIÓN ACADÉMICA</small>
+        <h2>Nuestra oferta educativa</h2>
+        <p>
+            Bachillerato tecnológico con una duración de seis semestres,
+            que integra formación académica, científica y tecnológica.
+        </p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="icon">🩺</div>
+            <h3>Ciencias de la Salud</h3>
+            <p>
+                Formación relacionada con anatomía, fisiología,
+                prevención, promoción de la salud y atención comunitaria.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Contabilidad</h3>
+            <p>
+                Desarrollo de conocimientos financieros,
+                administrativos, contables y de gestión.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔬</div>
+            <h3>Biotecnología</h3>
+            <p>
+                Acercamiento al trabajo científico, técnicas
+                microbiológicas, bioseguridad y prácticas de laboratorio.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SEMESTRES -->
+<section class="cycle">
+    <h2>Seis semestres de aprendizaje</h2>
+    <p>Construye tu futuro paso a paso.</p>
+
+    <div class="semesters">
+        <div class="semester"><strong>01</strong><span>Primer semestre</span></div>
+        <div class="semester"><strong>02</strong><span>Segundo semestre</span></div>
+        <div class="semester"><strong>03</strong><span>Tercer semestre</span></div>
+        <div class="semester"><strong>04</strong><span>Cuarto semestre</span></div>
+        <div class="semester"><strong>05</strong><span>Quinto semestre</span></div>
+        <div class="semester"><strong>06</strong><span>Sexto semestre</span></div>
+    </div>
+</section>
+
+<!-- INSTALACIONES -->
+<section class="section facilities" id="instalaciones">
+    <div class="section-title">
+        <small>NUESTROS ESPACIOS</small>
+        <h2>Instalaciones educativas</h2>
+        <p>
+            Espacios diseñados para fortalecer el aprendizaje,
+            la convivencia, la investigación y el bienestar.
+        </p>
+    </div>
+
+    <div class="grid">
+        <div class="facility"><span>📚</span><h3>Biblioteca</h3></div>
+        <div class="facility"><span>💻</span><h3>Centro de cómputo</h3></div>
+        <div class="facility"><span>🏥</span><h3>Enfermería</h3></div>
+        <div class="facility"><span>🧪</span><h3>Laboratorio de ciencias</h3></div>
+        <div class="facility"><span>🩺</span><h3>Taller de Ciencias de la Salud</h3></div>
+        <div class="facility"><span>📈</span><h3>Taller de Contabilidad</h3></div>
+        <div class="facility"><span>🔬</span><h3>Taller de Microbiología</h3></div>
+        <div class="facility"><span>🏋️</span><h3>Gimnasio</h3></div>
+        <div class="facility"><span>🥊</span><h3>Área de box</h3></div>
+        <div class="facility"><span>🌳</span><h3>Áreas verdes</h3></div>
+        <div class="facility"><span>🍎</span><h3>Cafetería y comedor</h3></div>
+    </div>
+    <section id="documentos" class="documentos">
+
+    <h2>Croquis</h2>
+
+    <p>Consulta nuestras instlaciones de La Galaxia del Saber.</p>
+
+    <iframe
+        src="escuela__la_galaxia_del_saber_ (7).pdf"
+        width="100%"
+        height="650"
+        style="border: none; border-radius: 10px;">
+    </iframe>
+
+</section>
+</section>
+
+<!-- VIDA ESTUDIANTIL -->
+<section class="section" id="actividades">
+    <div class="section-title">
+        <small>COMUNIDAD ESCOLAR</small>
+        <h2>Vida estudiantil</h2>
+        <p>
+            Actividades que fortalecen el talento, la identidad,
+            la participación y la convivencia.
+        </p>
+    </div>
+
+    <div class="events">
+        <div class="event">
+            <strong>30 OCTUBRE 2026</strong>
+            <h3>Concurso de catrinas</h3>
+            <p>Creatividad, tradición y expresión cultural.</p>
+        </div>
+
+        <div class="event">
+            <strong>3 NOVIEMBRE 2026</strong>
+            <h3>Exposición de ofrendas</h3>
+            <p>Preservación de nuestras tradiciones.</p>
+        </div>
+
+        <div class="event">
+            <strong>14 DICIEMBRE 2026</strong>
+            <h3>Navidad en el mundo</h3>
+            <p>Conocimiento y respeto por la diversidad cultural.</p>
+        </div>
+
+        <div class="event">
+            <strong>7 ENERO 2027</strong>
+            <h3>Campaña de juguetes</h3>
+            <p>Solidaridad y compromiso con la comunidad.</p>
+        </div>
+
+        <div class="event">
+            <strong>24 FEBRERO 2027</strong>
+            <h3>Expo Ciencias</h3>
+            <p>Presentación de proyectos y conocimientos.</p>
+        </div>
+
+        <div class="event">
+            <strong>19 MARZO 2027</strong>
+            <h3>Siembra de plantas</h3>
+            <p>Cuidado del medio ambiente y naturaleza.</p>
+        </div>
+
+        <div class="event">
+            <strong>23 ABRIL 2027</strong>
+            <h3>Obras de teatro</h3>
+            <p>Expresión artística y perseverancia.</p>
+        </div>
+
+        <div class="event">
+            <strong>14 MAYO 2027</strong>
+            <h3>Rally Código Resiliencia</h3>
+            <p>Convivencia, deporte y desarrollo socioemocional.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ADMISIONES -->
+<section class="section admissions" id="admisiones">
+    <h2>¡Forma parte de nuestra galaxia!</h2>
+    <p>
+        Tu futuro comienza con una oportunidad para aprender,
+        descubrir tus talentos y alcanzar nuevas metas.
+    </p>
+
+    <div class="fees">
+        <h3 style="color:#071a36;margin-bottom:15px">
+            Propuesta de cuotas escolares
+        </h3>
+
+        <div class="fee-row">
+            <span>Inscripción</span>
+            <strong>$3,800 MXN</strong>
+        </div>
+
+        <div class="fee-row">
+            <span>Reinscripción semestral</span>
+            <strong>$3,600 MXN</strong>
+        </div>
+
+        <div class="fee-row">
+            <span>Mantenimiento semestral</span>
+            <strong>$1,800 MXN</strong>
+        </div>
+
+        <div class="fee-row">
+            <span>Descuento en reinscripción por promedio de 9.5 a 10</span>
+            <strong>20%</strong>
+        </div>
+
+        <p style="font-size:12px;color:#647084;margin-top:15px">
+            Cuotas propuestas en el proyecto institucional.
+            El descuento está sujeto a revisión de calificaciones
+            y ausencia de adeudos. No aplica a inscripción,
+            colegiatura ni mantenimiento.
+        </p>
+    </div>
+
+    <p>
+        ¡Descubre todo lo que puedes lograr!
+    </p>
+
+    <a href="SISTEMA.html" class="btn" style="margin-top:20px">
+        Acceder al sistema escolar
+    </a>
+</section>
+
+<!-- PIE DE PÁGINA -->
+<footer>
+    <h2>✦ LA GALAXIA DEL SABER ✦</h2>
+    <p>Educación Media Superior | Bachillerato Tecnológico</p>
+    <p>Carretera Federal Tlaxco-Apizaco, km 59, C.P. 90250.</p>
+    <p>Una institución donde cada talento encuentra su universo.</p>
+
+    <div class="footer-bottom">
+        © 2026 La Galaxia del Saber. Todos los derechos reservados.
+        <br>
+        Ciclo escolar 2026-2027
+    </div>
+</footer>
+
+</body>
+</html>
