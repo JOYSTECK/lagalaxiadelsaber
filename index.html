@@ -29,6 +29,7 @@ body {
     line-height: 1.6;
 }
 
+/* ENCABEZADO */
 header {
     background: var(--azul);
     color: white;
@@ -49,9 +50,10 @@ header {
     gap: 12px;
 }
 
-.logo-icon {
-    color: var(--dorado);
-    font-size: 35px;
+.logo-icon img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo h2 {
@@ -60,7 +62,7 @@ header {
 }
 
 .logo small {
-    color: #d9ae54;
+    color: var(--dorado);
     font-size: 11px;
     letter-spacing: 2px;
 }
@@ -99,6 +101,7 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
+/* PORTADA */
 .hero {
     min-height: 590px;
     display: flex;
@@ -153,6 +156,7 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
+/* SECCIONES GENERALES */
 .section {
     padding: 75px 9%;
 }
@@ -180,6 +184,7 @@ nav a:hover {
     color: #647084;
 }
 
+/* NOSOTROS */
 .about {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -214,6 +219,7 @@ nav a:hover {
     font-size: 13px;
 }
 
+/* OFERTA EDUCATIVA */
 .careers {
     background: var(--gris);
 }
@@ -253,6 +259,7 @@ nav a:hover {
     font-size: 14px;
 }
 
+/* SEMESTRES */
 .cycle {
     background: var(--azul);
     color: white;
@@ -292,6 +299,7 @@ nav a:hover {
     font-size: 13px;
 }
 
+/* INSTALACIONES */
 .facilities {
     background: var(--gris);
 }
@@ -313,6 +321,74 @@ nav a:hover {
     font-size: 17px;
 }
 
+/* RECORRIDO VIRTUAL */
+.visor-pagina {
+    width: 100%;
+    max-width: 1800px;
+    height: 1000px;
+    margin: 35px auto 60px;
+    overflow: hidden;
+    background: white;
+    border: 3px solid var(--dorado);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px #071a3625;
+}
+
+.visor-pagina iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* CROQUIS PDF */
+.documentos {
+    width: 100%;
+    max-width: 1400px;
+    margin: 50px auto 20px;
+    padding: 35px 20px;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+}
+
+.documentos h2 {
+    color: var(--azul);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.documentos p {
+    color: #647084;
+    margin-bottom: 25px;
+}
+
+.visor-pdf {
+    width: 100%;
+    height: 850px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #0002;
+}
+
+.visor-pdf iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.btn-pdf {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: var(--dorado);
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+/* ACTIVIDADES */
 .events {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -337,6 +413,7 @@ nav a:hover {
     font-size: 17px;
 }
 
+/* ADMISIONES */
 .admissions {
     background: linear-gradient(120deg, var(--azul), var(--azul2));
     color: white;
@@ -371,6 +448,7 @@ nav a:hover {
     border-bottom: none;
 }
 
+/* PIE DE PÁGINA */
 footer {
     background: #041126;
     color: white;
@@ -397,6 +475,7 @@ footer p {
     color: #aab5c5;
 }
 
+/* TABLETAS */
 @media(max-width: 850px) {
     header {
         flex-direction: column;
@@ -412,6 +491,22 @@ footer p {
 
     .hero {
         padding: 70px 7%;
+    }
+}
+
+/* CELULARES */
+@media(max-width: 768px) {
+    .visor-pagina {
+        height: 750px;
+        border-radius: 8px;
+    }
+
+    .visor-pdf {
+        height: 600px;
+    }
+
+    .documentos h2 {
+        font-size: 23px;
     }
 }
 
@@ -431,41 +526,34 @@ footer p {
     .fee-row {
         font-size: 13px;
     }
-.visor-pagina {
-    width: 100% !important;
-    max-width: none !important;
-    height: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    overflow: hidden;
-    border-radius: 0;
-    box-sizing: border-box;
-}
 
-/* PÁGINA INSERTADA */
-.visor-pagina iframe {
-    display: block;
-    width: 100% !important;
-    height: 1200px !important;
-    border: none;
-}
-
-/* CELULARES */
-@media(max-width: 768px) {
-    .visor-pagina,
-    .visor-pagina iframe {
-        height: 900px !important;
+    .logo-icon img {
+        height: 60px;
     }
-}
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .visor-pagina {
+        height: 650px;
+    }
+
+    .visor-pdf {
+        height: 450px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- ENCABEZADO -->
 <header>
     <div class="logo">
-        <div class="logo-icon"><img src="logo.png" height="80px"></div>
+        <div class="logo-icon">
+            <img src="logo.png" alt="Logo de La Galaxia del Saber">
+        </div>
         <div>
             <h2>LA GALAXIA DEL SABER</h2>
             <small>EDUCACIÓN MEDIA SUPERIOR</small>
@@ -502,6 +590,7 @@ footer p {
         </p>
 
         <a href="#oferta" class="btn">Conoce nuestra escuela</a>
+
         <a href="SISTEMA.html" class="btn"
            style="background:transparent;color:white;border:1px solid #d9ae54;margin-left:8px">
            Ingresar al sistema
@@ -552,6 +641,7 @@ footer p {
 
     <div style="text-align:center;margin-top:35px">
         <h3 style="color:#071a36">Nuestros valores</h3>
+
         <div class="values" style="justify-content:center">
             <span class="value">Justicia social</span>
             <span class="value">Talento</span>
@@ -624,6 +714,7 @@ footer p {
 
 <!-- INSTALACIONES -->
 <section class="section facilities" id="instalaciones">
+
     <div class="section-title">
         <small>NUESTROS ESPACIOS</small>
         <h2>Instalaciones educativas</h2>
@@ -631,29 +722,46 @@ footer p {
             Espacios diseñados para fortalecer el aprendizaje,
             la convivencia, la investigación y el bienestar.
         </p>
+    </div>
 
-     <div class="visor-pagina">
+    <!-- RECORRIDO VIRTUAL -->
+    <div class="documentos">
+        <h2>Recorrido virtual por nuestra institución</h2>
+        <p>
+            Explora las instalaciones de La Galaxia del Saber
+            y conoce nuestros espacios educativos.
+        </p>
+    </div>
+
+    <div class="visor-pagina">
         <iframe
             src="https://juanmunoz203uatx-bit.github.io/La-galaxia-del-saber-plane-arquitect/"
+            title="Recorrido virtual de La Galaxia del Saber"
             loading="lazy"
             allowfullscreen>
         </iframe>
     </div>
+
+    <!-- CROQUIS PDF -->
+    <div class="documentos" id="documentos">
+        <h2>Croquis de nuestras instalaciones</h2>
+        <p>
+            Consulta el plano general de las instalaciones
+            de La Galaxia del Saber.
+        </p>
+
+        <div class="visor-pdf">
+            <iframe
+                src="escuela__la_galaxia_del_saber_ (7).pdf"
+                title="Croquis de La Galaxia del Saber">
+            </iframe>
+        </div>
+
+        <a href="escuela__la_galaxia_del_saber_ (7).pdf" target="_blank" class="btn-pdf">
+            Abrir croquis en otra pestaña
+        </a>
     </div>
-    <section id="documentos" class="documentos">
 
-    <h2>Croquis</h2>
-
-    <p>Consulta nuestras instlaciones de La Galaxia del Saber.</p>
-
-    <iframe
-        src="escuela__la_galaxia_del_saber_ (7).pdf"
-        width="100%"
-        height="650"
-        style="border: none; border-radius: 10px;">
-    </iframe>
-
-</section>
 </section>
 
 <!-- VIDA ESTUDIANTIL -->
@@ -721,6 +829,7 @@ footer p {
 <!-- ADMISIONES -->
 <section class="section admissions" id="admisiones">
     <h2>¡Forma parte de nuestra galaxia!</h2>
+
     <p>
         Tu futuro comienza con una oportunidad para aprender,
         descubrir tus talentos y alcanzar nuevas metas.
@@ -759,9 +868,7 @@ footer p {
         </p>
     </div>
 
-    <p>
-        ¡Descubre todo lo que puedes lograr!
-    </p>
+    <p>¡Descubre todo lo que puedes lograr!</p>
 
     <a href="SISTEMA.html" class="btn" style="margin-top:20px">
         Acceder al sistema escolar
@@ -771,6 +878,7 @@ footer p {
 <!-- PIE DE PÁGINA -->
 <footer>
     <h2>✦ LA GALAXIA DEL SABER ✦</h2>
+
     <p>Educación Media Superior | Bachillerato Tecnológico</p>
     <p>Carretera Federal Tlaxco-Apizaco, km 59, C.P. 90250.</p>
     <p>Una institución donde cada talento encuentra su universo.</p>
