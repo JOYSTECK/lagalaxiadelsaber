@@ -431,27 +431,32 @@ footer p {
     .fee-row {
         font-size: 13px;
     }
-    .visor-pagina {
-    width: 1000%;
-    max-width: 1800px;
-    height: 2000px;
-    margin: auto;
+.visor-pagina {
+    width: 100% !important;
+    max-width: none !important;
+    height: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
     overflow: hidden;
-    border-radius: 15px;
-    background: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    border-radius: 0;
+    box-sizing: border-box;
 }
 
+/* PÁGINA INSERTADA */
 .visor-pagina iframe {
-    width: 200%;
-    height: 200%;
+    display: block;
+    width: 100% !important;
+    height: 1200px !important;
     border: none;
 }
 
+/* CELULARES */
 @media(max-width: 768px) {
-    .visor-pagina {
-        height: 600px;
+    .visor-pagina,
+    .visor-pagina iframe {
+        height: 900px !important;
     }
+}
 }
 </style>
 </head>
